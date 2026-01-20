@@ -1,0 +1,23 @@
+import { Plus } from "lucide-react";
+import React from "react";
+
+const Button = ({ children, variant, onClick, className, type="button" }) => {
+  const baseStyle = "flex justify-center gap-4 items-center px-2 py-1 rounded-md font-medium";
+
+  const variants = {
+    primary: "bg-sky-800 text-white",
+    outline: "bg-white text-sky-800 border border-sky-800",
+  };
+
+  return (
+    <button
+      onClick={onClick}
+      type={type}
+      className={`${baseStyle} ${variants[variant]} ${className}`}
+    >
+      {children}
+    </button>
+  );
+};
+
+export default Button;
