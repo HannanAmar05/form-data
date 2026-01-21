@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Button from "./ui/Button";
 import { 
   Calendar, Type, FileText, ChevronDown, Plus, 
   Pencil, Trash2, GripVertical, Folder 
 } from "lucide-react";
+import Button from "./ui/Button";
 
 const Accordion = ({ formData, onAddElement, onEditElement, onDeleteElement }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +26,7 @@ const Accordion = ({ formData, onAddElement, onEditElement, onDeleteElement }) =
   };
 
   return (
-    <div className="border border-gray-200 rounded-lg mb-4 bg-white shadow-sm overflow-hidden">
+    <div className="border border-gray-200 rounded-lg mb-4 bg-white shadow-sm">
       
       <div 
         className="p-4 flex items-center justify-between bg-white cursor-pointer hover:bg-gray-50 transition-colors"
@@ -70,12 +70,12 @@ const Accordion = ({ formData, onAddElement, onEditElement, onDeleteElement }) =
 
                 {/* Tombol Edit/Delete PER ELEMENT */}
                 <div className="flex items-center gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => onEditElement(el)} className="p-1.5 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded">
-                    <Pencil size={16} />
-                  </button>
-                  <button onClick={() => onDeleteElement(el.id)} className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded">
-                    <Trash2 size={16} />
-                  </button>
+                  <Button onClick={() => onEditElement(el)} variant="edit">
+                    <Pencil size={18} />
+                  </Button>
+                  <Button onClick={() => onDeleteElement(el.id)} variant="delete">
+                    <Trash2 size={18} />
+                  </Button>
                 </div>
               </div>
             ))}

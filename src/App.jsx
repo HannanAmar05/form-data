@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FormModal from "./components/FormModal";
@@ -23,7 +22,7 @@ const App = () => {
   } = useFormManager(dummyForms);
 
   return (
-    <div className="h-screen overflow-hidden flex flex-col">
+    <div className="">
       <Header />
 
       <main className="p-4 bg-gray-50 mt-5 mx-10 rounded-lg flex-1 overflow-auto">
@@ -51,7 +50,7 @@ const App = () => {
           setIsOpen={setIsModalOpen}
           onSubmit={handleSubmit}
           initialData={editingElement}
-          mode={modalMode} // Oper mode ke modal
+          mode={modalMode}
         />
       )}
 

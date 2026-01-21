@@ -55,7 +55,7 @@ const FormModal = ({ initialData, setIsOpen, onSubmit, mode }) => {
 
     // Kirim data gabungan
     onSubmit({
-      formName, // Akan undefined/kosong jika mode add/edit element (tidak masalah)
+      formName,
       type: elementType,
       name: elementName,
       date: elementType === "date" ? dateFormat : null,
@@ -66,7 +66,7 @@ const FormModal = ({ initialData, setIsOpen, onSubmit, mode }) => {
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 w-1/3 rounded-lg shadow-xl"
+        className="bg-white p-6  md:w-1/2 w-11/12 xl:w-1/3 rounded-lg shadow-xl"
       >
         <div className="mb-5 border-b pb-3">
           <h1 className="text-xl font-bold text-gray-800">{getTitle()}</h1>
@@ -95,7 +95,7 @@ const FormModal = ({ initialData, setIsOpen, onSubmit, mode }) => {
             </p>
           )}
 
-          <InputGroup label="Input Type">
+          <InputGroup label="Element Type">
             <Select
               value={elementType}
               onChange={(e) => setElementType(e.target.value)}
@@ -107,7 +107,7 @@ const FormModal = ({ initialData, setIsOpen, onSubmit, mode }) => {
             />
           </InputGroup>
 
-          <InputGroup label="Label / Question" error={errors.elementName}>
+          <InputGroup label="Element Name" error={errors.elementName}>
             <input
               type="text"
               value={elementName}
