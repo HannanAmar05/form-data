@@ -7,6 +7,8 @@ const Button = ({ children, variant, onClick, className, type="button" }) => {
   const variants = {
     primary: "bg-sky-800 text-white",
     outline: "bg-white text-sky-800 border border-sky-800",
+    delete: "text-red-500 transition-colors bg-red-100 hover:bg-red-500 hover:text-white  ",
+    edit: "bg-orange-400 text-white hover:bg-orange-500 transition-colors "
   };
 
   return (
